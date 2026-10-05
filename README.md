@@ -1,2 +1,11 @@
 # best-selling-products-identification
-A machine learning system that identifies best-selling product groups using ratings, prices, discounts, and sales scores. It applies K-Means, Hierarchical Clustering, GMM, and DBSCAN with PCA to analyze product patterns and identify high-performing products.
+
+The **Best Selling Product Identification System** is a machine learning project designed to analyze product data and identify groups of products with strong sales potential. The system uses unsupervised machine learning and clustering techniques to discover patterns and categorize products based on important attributes such as ratings, number of ratings, initial price, final price, discount, and calculated sales-related metrics.
+
+The project begins by importing a combined product dataset and performing preprocessing operations to improve data quality. Product column names are standardized, duplicate records are removed, and numerical fields are converted into appropriate numerical formats. Missing values are handled before creating additional features. A **sales score** is calculated using product rating and ratings count, while the percentage discount is derived from the initial and final prices. These features are then combined to create the dataset used for machine learning.
+
+Before clustering, the features are standardized using **StandardScaler** so that variables with different scales can be compared effectively. **Principal Component Analysis (PCA)** is also applied to reduce the dimensionality of the data and visualize product clusters. The project evaluates different clustering possibilities using the **Elbow Method** and **Silhouette Score**.
+
+Multiple clustering algorithms are implemented, including **K-Means, Agglomerative Hierarchical Clustering, Gaussian Mixture Model (GMM), and DBSCAN**. K-Means clustering is used with three clusters for the final product grouping. The average characteristics of each cluster are then analyzed, and the cluster with the highest average sales score is identified as the **best-selling product cluster**. The system also displays top products from the selected cluster using attributes such as product title, rating, ratings count, and final price.
+
+Finally, the clustered dataset is exported as a CSV file for further analysis. Overall, the project demonstrates how machine learning and data analytics can be used to transform raw e-commerce product data into meaningful product segments and identify high-performing products.
